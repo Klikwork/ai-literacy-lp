@@ -17,6 +17,13 @@ vite.config.ts.timestamp-*
 
 # Editor
 .vscode/
+
+# Claude
+.claude/
+
+# Raw assets (use public/ versions)
+"Certificate sample.png"
+klikwork-brand.skill
 *.suo
 *.ntvs*
 *.njsproj
