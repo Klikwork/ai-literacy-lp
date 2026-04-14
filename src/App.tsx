@@ -327,6 +327,58 @@ export default function App() {
           </div>
         </section>
 
+        {/* SECTION: Testimonials */}
+        <section className="py-24 px-6">
+          <div className="max-w-6xl mx-auto">
+            <motion.div {...fadeIn} className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4">Trusted by recruiters</h2>
+              <p className="text-brand-gray">What recent graduates say about the training.</p>
+            </motion.div>
+            <motion.div {...fadeIn} className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  quote: "Well-structured training, packed with engaging examples. The final exam and certificate make it genuinely useful, especially with the AI Act on the horizon.",
+                  name: "Frank Bax",
+                  role: "Senior Recruiter, NLR",
+                  photo: "/testimonial-frank-bax.jpeg"
+                },
+                {
+                  quote: "A clear, sharp training on responsible AI in recruitment. Loved the AI-avatar format. Really put me back on my toes. Glad I passed!",
+                  name: "Esther van der Hoorn",
+                  role: "Manager, Happy Talent",
+                  photo: "/testimonial-esther-van-der-hoorn.jpeg"
+                },
+                {
+                  quote: "Clear, easy to follow, including the exam. You'll have your certificate in no time.",
+                  name: "Patricia Voogd",
+                  role: "Corporate Recruiter, BrabantZorg",
+                  photo: "/testimonial-patricia-voogd.jpeg"
+                }
+              ].map((t, idx) => (
+                <div
+                  key={idx}
+                  className="bg-brand-card rounded-2xl p-8 border border-white/5 flex flex-col"
+                >
+                  <p className="text-brand-gray leading-relaxed mb-6 flex-grow">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-4 pt-6 border-t border-white/5">
+                    <img
+                      src={t.photo}
+                      alt={t.name}
+                      className="w-14 h-14 rounded-full object-cover"
+                    />
+                    <div>
+                      <div className="font-bold">{t.name}</div>
+                      <div className="text-sm text-brand-gray">{t.role}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
         {/* SECTION 6: About Klikwork */}
         <section className="py-24 px-6 bg-brand-card/30">
           <div className="max-w-3xl mx-auto">
