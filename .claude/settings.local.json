@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open \"/Users/klikwork/Documents/AI Literacy LP/index.html\")",
+      "WebFetch(domain:aire-bootcamp.klikwork.com)",
+      "mcp__claude_ai_Firecrawl__firecrawl_scrape",
+      "WebFetch(domain:storage.googleapis.com)"
+    ]
+  }
+}
