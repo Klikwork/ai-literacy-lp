@@ -26,7 +26,7 @@ const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 bg-brand-bg/80 backdrop-blur-md border-b border-white/5">
     <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <div className="flex items-center">
-        <img src="/klikwork-brand/klikwork-brand/assets/logos/white/full.png" alt="Klikwork" className="h-[84px]" />
+        <img src="/logo.png" alt="Klikwork" className="h-[84px]" />
       </div>
       <a 
         href="#pricing" 
@@ -414,7 +414,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center mb-6">
-                <img src="/klikwork-brand/klikwork-brand/assets/logos/white/full.png" alt="Klikwork" className="h-[84px]" />
+                <img src="/logo.png" alt="Klikwork" className="h-[84px]" />
               </div>
               <p className="text-brand-gray max-w-sm leading-relaxed">
                 Klikwork trains recruiters on AI. We teach people how to use tools well, ethically, and legally.
