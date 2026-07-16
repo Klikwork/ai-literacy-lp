@@ -309,7 +309,7 @@ export default function App() {
             <motion.div {...fadeIn} className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Get your AI literacy certificate</h2>
               <p className="text-brand-gray text-lg mb-4">Each person receives their own personal access link and certificate.</p>
-              <p className="text-klikwork-orange font-medium">Other AI-literacy courses charge up to 500 euro and take half a day. This takes 30 focused minutes — 47 euro.</p>
+              <p className="text-klikwork-orange font-medium">Built only for recruiters — not a generic AI course. 30 focused minutes, 47 euro, and a certificate that goes straight onto your LinkedIn.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
