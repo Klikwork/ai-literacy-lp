@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Play, 
@@ -80,6 +80,14 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
 // --- Main App ---
 
 export default function App() {
+  // Forward ad-tracking params (utm_*, fbclid) to the checkout so
+  // campaign attribution survives the hop to Plug&Pay.
+  const [trackingParams, setTrackingParams] = useState('');
+  useEffect(() => {
+    if (window.location.search) setTrackingParams(window.location.search);
+  }, []);
+  const checkoutHref = CHECKOUT_URL + trackingParams;
+
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
@@ -352,7 +360,7 @@ export default function App() {
                     <div className="text-sm text-brand-gray mt-2">{tier.vat}</div>
                   </div>
                   <a
-                    href={CHECKOUT_URL}
+                    href={checkoutHref}
                     className={`w-full py-5 rounded-full text-center font-bold transition-all duration-300 transform active:scale-95 text-lg hover:scale-[1.02] ${i === 0 ? 'bg-klikwork-orange text-white hover:bg-klikwork-orange/90 hover:shadow-[0_0_25px_rgba(255,85,0,0.3)]' : 'bg-transparent border-2 border-klikwork-orange text-klikwork-orange hover:bg-klikwork-orange/10'}`}
                   >
                     {tier.cta}
