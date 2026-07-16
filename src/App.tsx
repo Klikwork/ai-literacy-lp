@@ -432,13 +432,13 @@ export default function App() {
                     Certified? This is your next step.
                   </h2>
                   <p className="text-brand-gray leading-relaxed mb-6 text-lg">
-                    AI literacy proves you understand AI. The <span className="text-white font-semibold">AI Recruitment Engineer Starter</span> teaches you to put it to work — building practical AI workflows into your daily recruitment, step by step, with a community of recruiters doing the same.
+                    AI literacy proves you understand AI. The <span className="text-white font-semibold">AI Recruitment Engineer Starter</span> teaches you to build with it — a self-paced course of seven modules and micro-lessons that hands you a working recruitment AI plugin you can use from day one.
                   </p>
                   <ul className="space-y-3 mb-8">
                     {[
-                      "Go from understanding AI to actually building with it",
-                      "Self-paced content plus a community of AI-forward recruiters",
-                      "The natural continuation once your certificate is in hand"
+                      "Go from understanding AI to building your own recruitment workflows",
+                      "Seven modules plus micro-lessons, self-paced, 60 days of access",
+                      "Includes a ready-to-use recruitment plugin — 297 euro, worldwide"
                     ].map((text, i) => (
                       <li key={i} className="flex items-start gap-3 text-brand-gray">
                         <Wrench className="w-4 h-4 text-klikwork-orange mt-1 shrink-0" />
