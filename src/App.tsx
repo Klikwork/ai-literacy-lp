@@ -17,8 +17,18 @@ import {
   Scale, 
   Lock,
   ExternalLink,
-  Mail
+  Mail,
+  Clock,
+  Award,
+  Wrench
 } from 'lucide-react';
+
+// --- Config ---
+// Single source of truth for the funnel links.
+// NOTE: confirm the AIRE Starter slug — this follows the same checkout pattern
+// as the AI Literacy course but has not been verified against a live page yet.
+const CHECKOUT_URL = 'https://go.klikwork.com/checkout/ai-literacy-for-recruiters';
+const AIRE_STARTER_URL = 'https://go.klikwork.com/checkout/aire-starter';
 
 // --- Components ---
 
@@ -107,6 +117,13 @@ export default function App() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="flex-1 max-w-2xl"
               >
+                <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-klikwork-orange/30 bg-klikwork-orange/10 text-sm font-medium">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-klikwork-orange opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-klikwork-orange" />
+                  </span>
+                  EU AI Act · Article 4 enforcement rolling out across Europe in 2026
+                </div>
                 <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[0.9] text-gradient">
                   AI literacy for recruiters. <br />
                   <span className="text-klikwork-orange">Certified.</span>
@@ -114,8 +131,10 @@ export default function App() {
                 <p className="text-xl md:text-2xl text-brand-gray mb-10 leading-relaxed max-w-2xl">
                   30 minutes. Three modules. A certificate that proves you understand AI, its risks, and your legal obligations.
                 </p>
-                <div className="flex items-center gap-6 mb-6">
-                  <div className="text-sm text-brand-gray"><span className="text-white font-bold">250+</span> recruiters certified</div>
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-6 text-sm text-brand-gray">
+                  <div><span className="text-white font-bold">250+</span> recruiters certified</div>
+                  <div className="hidden sm:block w-px h-4 bg-white/10" />
+                  <div className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-klikwork-orange" /> 30 minutes, start to certificate</div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
@@ -290,7 +309,7 @@ export default function App() {
             <motion.div {...fadeIn} className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Get your AI literacy certificate</h2>
               <p className="text-brand-gray text-lg mb-4">Each person receives their own personal access link and certificate.</p>
-              <p className="text-klikwork-orange font-medium">Comparable programs cost 75 to 399 euro. This is 47.</p>
+              <p className="text-klikwork-orange font-medium">Other AI-literacy courses charge up to 500 euro and take half a day. This takes 30 focused minutes — 47 euro.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -316,7 +335,7 @@ export default function App() {
                     <span className="text-brand-gray ml-2 text-xl">euro</span>
                   </div>
                   <a
-                    href="https://go.klikwork.com/checkout/ai-literacy-for-recruiters"
+                    href={CHECKOUT_URL}
                     className={`w-full py-5 rounded-full text-center font-bold transition-all duration-300 transform active:scale-95 text-lg hover:scale-[1.02] ${i === 0 ? 'bg-klikwork-orange text-white hover:bg-klikwork-orange/90 hover:shadow-[0_0_25px_rgba(255,85,0,0.3)]' : 'bg-transparent border-2 border-klikwork-orange text-klikwork-orange hover:bg-klikwork-orange/10'}`}
                   >
                     {tier.cta}
@@ -386,11 +405,55 @@ export default function App() {
               <h2 className="text-4xl font-bold mb-8 text-center">Klikwork trains recruiters on AI.</h2>
               <div className="space-y-6 text-brand-gray leading-relaxed text-lg text-center">
                 <p>
-                  Founded by Marcel van der Meer, Klikwork has trained recruiters at 500+ companies across Europe and beyond.
+                  Founded by Marcel van der Meer, Klikwork has trained 5,000+ recruiters at 500+ companies across Europe and beyond.
                 </p>
                 <p>
                   This training was developed because the EU AI Act creates a real compliance requirement, and most existing AI training is either too generic or too technical for practicing recruiters. We built something that is direct, practical, and testable.
                 </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* SECTION: Next step — AI Recruitment Engineer Starter */}
+        <section className="py-24 px-6">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              {...fadeIn}
+              className="glass-card rounded-3xl p-10 md:p-14 relative overflow-hidden"
+            >
+              <div className="absolute -top-24 -right-24 w-72 h-72 bg-klikwork-orange/10 blur-[100px] rounded-full -z-0" />
+              <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-10">
+                <div className="flex-1">
+                  <div className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest text-brand-gray">
+                    <Award className="w-4 h-4 text-klikwork-orange" /> After your certificate
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    Certified? This is your next step.
+                  </h2>
+                  <p className="text-brand-gray leading-relaxed mb-6 text-lg">
+                    AI literacy proves you understand AI. The <span className="text-white font-semibold">AI Recruitment Engineer Starter</span> teaches you to put it to work — building practical AI workflows into your daily recruitment, step by step, with a community of recruiters doing the same.
+                  </p>
+                  <ul className="space-y-3 mb-8">
+                    {[
+                      "Go from understanding AI to actually building with it",
+                      "Self-paced content plus a community of AI-forward recruiters",
+                      "The natural continuation once your certificate is in hand"
+                    ].map((text, i) => (
+                      <li key={i} className="flex items-start gap-3 text-brand-gray">
+                        <Wrench className="w-4 h-4 text-klikwork-orange mt-1 shrink-0" />
+                        <span>{text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={AIRE_STARTER_URL}
+                    className="inline-flex items-center gap-2 border-2 border-klikwork-orange text-klikwork-orange hover:bg-klikwork-orange hover:text-white px-8 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-95"
+                  >
+                    Explore the AI Recruitment Engineer Starter
+                    <ArrowRight className="w-5 h-5" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -476,6 +539,7 @@ export default function App() {
               <h5 className="font-bold mb-6 uppercase text-xs tracking-widest text-brand-gray">Links</h5>
               <ul className="space-y-4 text-sm">
                 <li><a href="https://klikwork.com" className="hover:text-klikwork-orange transition-colors flex items-center gap-1">klikwork.com <ExternalLink className="w-3 h-3" /></a></li>
+                <li><a href={AIRE_STARTER_URL} className="hover:text-klikwork-orange transition-colors">AI Recruitment Engineer Starter</a></li>
                 <li><a href="https://www.klikwork.com/privacy-policy" className="hover:text-klikwork-orange transition-colors">Privacy policy</a></li>
                 <li><a href="https://www.klikwork.com/terms-and-condition" className="hover:text-klikwork-orange transition-colors">Terms and conditions</a></li>
               </ul>
