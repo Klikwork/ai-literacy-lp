@@ -26,10 +26,8 @@ import {
 
 // --- Config ---
 // Single source of truth for the funnel links.
-// NOTE: confirm the AIRE Starter slug — this follows the same checkout pattern
-// as the AI Literacy course but has not been verified against a live page yet.
 const CHECKOUT_URL = 'https://go.klikwork.com/checkout/ai-literacy-for-recruiters';
-const AIRE_STARTER_URL = 'https://go.klikwork.com/checkout/aire-starter';
+const ENGINEER_STARTER_URL = 'https://www.klikwork.com/training/starter';
 
 // --- Components ---
 
@@ -475,7 +473,7 @@ export default function App() {
                     ))}
                   </ul>
                   <a
-                    href={AIRE_STARTER_URL}
+                    href={ENGINEER_STARTER_URL}
                     className="inline-flex items-center gap-2 border-2 border-klikwork-orange text-klikwork-orange hover:bg-klikwork-orange hover:text-white px-8 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-95"
                   >
                     Explore the AI Recruitment Engineer Starter
@@ -567,7 +565,7 @@ export default function App() {
               <h5 className="font-bold mb-6 uppercase text-xs tracking-widest text-brand-gray">Links</h5>
               <ul className="space-y-4 text-sm">
                 <li><a href="https://klikwork.com" className="hover:text-klikwork-orange transition-colors flex items-center gap-1">klikwork.com <ExternalLink className="w-3 h-3" /></a></li>
-                <li><a href={AIRE_STARTER_URL} className="hover:text-klikwork-orange transition-colors">AI Recruitment Engineer Starter</a></li>
+                <li><a href={ENGINEER_STARTER_URL} className="hover:text-klikwork-orange transition-colors">AI Recruitment Engineer Starter</a></li>
                 <li><a href="https://www.klikwork.com/privacy-policy" className="hover:text-klikwork-orange transition-colors">Privacy policy</a></li>
                 <li><a href="https://www.klikwork.com/terms-and-condition" className="hover:text-klikwork-orange transition-colors">Terms and conditions</a></li>
               </ul>
