@@ -128,7 +128,7 @@ export default function App() {
                   <span className="text-klikwork-orange">in 30 minutes.</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-brand-gray mb-10 leading-relaxed max-w-2xl">
-                  The EU AI Act requires recruiters who work with AI to demonstrate AI literacy. Three modules, one exam, an official watermarked certificate — finished today.
+                  The EU AI Act requires recruiters who work with AI to demonstrate AI literacy. Three modules, one exam, an official watermarked certificate. Finished today.
                 </p>
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-6 text-sm text-brand-gray">
                   <div><span className="text-white font-bold">250+</span> recruiters certified</div>
@@ -311,7 +311,7 @@ export default function App() {
             <motion.div {...fadeIn} className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Get your AI literacy certificate</h2>
               <p className="text-brand-gray text-lg mb-4">Each person receives their own personal access link and certificate.</p>
-              <p className="text-klikwork-orange font-medium">Built only for recruiters — not a generic AI course. 30 focused minutes, 47 euro, and a certificate that goes straight onto your LinkedIn.</p>
+              <p className="text-klikwork-orange font-medium">Built only for recruiters, not a generic AI course. 30 focused minutes, 47 euro, and a certificate that goes straight onto your LinkedIn.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -320,7 +320,7 @@ export default function App() {
                   badge: "Individual",
                   label: "Individual recruiter",
                   price: "47",
-                  vat: "excl. VAT — 56.87 incl.",
+                  vat: "excl. VAT (56.87 incl.)",
                   desc: "One license. Pay by iDEAL or card, start immediately. Certificate today.",
                   cta: "Get my certificate for 47 euro"
                 },
@@ -329,7 +329,7 @@ export default function App() {
                   label: "Team license",
                   price: "from 27",
                   vat: "per seat, excl. VAT",
-                  desc: "10–24 seats: 37 euro each. 25+ seats: 27 euro each. Order on invoice or request a quote first.",
+                  desc: "10 to 24 seats: 37 euro each. 25+ seats: 27 euro each. Order on invoice or request a quote first.",
                   cta: "Get my team certified"
                 }
               ].map((tier, i) => (
@@ -441,7 +441,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* SECTION: Next step — AI Recruitment Engineer Starter */}
+        {/* SECTION: Next step, AI Recruitment Engineer Starter */}
         <section className="py-24 px-6">
           <div className="max-w-5xl mx-auto">
             <motion.div
@@ -458,13 +458,13 @@ export default function App() {
                     Certified? This is your next step.
                   </h2>
                   <p className="text-brand-gray leading-relaxed mb-6 text-lg">
-                    AI literacy proves you understand AI. The <span className="text-white font-semibold">AI Recruitment Engineer Starter</span> teaches you to build with it — a self-paced course of seven modules and micro-lessons that hands you a working recruitment AI plugin you can use from day one.
+                    AI literacy proves you understand AI. The <span className="text-white font-semibold">AI Recruitment Engineer Starter</span> teaches you to build with it: a self-paced course of seven modules and micro-lessons that hands you a working recruitment AI plugin you can use from day one.
                   </p>
                   <ul className="space-y-3 mb-8">
                     {[
                       "Go from understanding AI to building your own recruitment workflows",
                       "Seven modules plus micro-lessons, self-paced, 60 days of access",
-                      "Includes a ready-to-use recruitment plugin — 297 euro, worldwide"
+                      "Includes a ready-to-use recruitment plugin. 297 euro, worldwide"
                     ].map((text, i) => (
                       <li key={i} className="flex items-start gap-3 text-brand-gray">
                         <Wrench className="w-4 h-4 text-klikwork-orange mt-1 shrink-0" />
@@ -516,7 +516,7 @@ export default function App() {
               />
               <FAQItem 
                 question="Can I do the training on my phone?" 
-                answer="Yes. The training works on any device — desktop, tablet, or mobile. Watch the modules and complete the test wherever it suits you."
+                answer="Yes. The training works on any device: desktop, tablet, or mobile. Watch the modules and complete the test wherever it suits you."
               />
               <FAQItem 
                 question="Are subtitles available?" 
