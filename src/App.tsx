@@ -409,6 +409,10 @@ export default function App() {
                     <img
                       src={t.photo}
                       alt={t.name}
+                      loading="lazy"
+                      decoding="async"
+                      width={56}
+                      height={56}
                       className="w-14 h-14 rounded-full object-cover"
                     />
                     <div>
