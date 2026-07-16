@@ -20,7 +20,8 @@ import {
   Mail,
   Clock,
   Award,
-  Wrench
+  Wrench,
+  Star
 } from 'lucide-react';
 
 // --- Config ---
@@ -122,14 +123,14 @@ export default function App() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-klikwork-orange opacity-75" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-klikwork-orange" />
                   </span>
-                  EU AI Act · Article 4 enforcement rolling out across Europe in 2026
+                  The obligation already applies · Enforcement starts 2 August 2026
                 </div>
                 <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[0.9] text-gradient">
-                  AI literacy for recruiters. <br />
-                  <span className="text-klikwork-orange">Certified.</span>
+                  Provably AI literate <br />
+                  <span className="text-klikwork-orange">in 30 minutes.</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-brand-gray mb-10 leading-relaxed max-w-2xl">
-                  30 minutes. Three modules. A certificate that proves you understand AI, its risks, and your legal obligations.
+                  The EU AI Act requires recruiters who work with AI to demonstrate AI literacy. Three modules, one exam, an official watermarked certificate — finished today.
                 </p>
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-6 text-sm text-brand-gray">
                   <div><span className="text-white font-bold">250+</span> recruiters certified</div>
@@ -168,9 +169,12 @@ export default function App() {
                   <div className="absolute inset-0 bg-klikwork-orange/20 blur-3xl rounded-2xl scale-90 translate-y-4" />
                   <img
                     src="/certificate.png"
-                    alt="AI Literacy for Recruiters certificate sample"
+                    alt="AI Literacy for Recruiters certificate sample with name, signature and watermark"
                     className="relative w-72 xl:w-80 rounded-2xl shadow-2xl shadow-black/50"
                   />
+                  <p className="relative mt-6 text-sm text-brand-gray text-center max-w-72 xl:max-w-80">
+                    The certificate that shows you take AI seriously.
+                  </p>
                 </div>
               </motion.div>
 
@@ -314,8 +318,22 @@ export default function App() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {[
-                { qty: "1", label: "Individual recruiter", price: "47", cta: "Get my certificate for 47 euro", desc: "One license" },
-                { qty: "5+", label: "Team license", price: "27", cta: "Get my team certified", desc: "Price starts at 27 euro per recruiter" }
+                {
+                  badge: "Individual",
+                  label: "Individual recruiter",
+                  price: "47",
+                  vat: "excl. VAT — 56.87 incl.",
+                  desc: "One license. Pay by iDEAL or card, start immediately. Certificate today.",
+                  cta: "Get my certificate for 47 euro"
+                },
+                {
+                  badge: "Teams of 10+",
+                  label: "Team license",
+                  price: "from 27",
+                  vat: "per seat, excl. VAT",
+                  desc: "10–24 seats: 37 euro each. 25+ seats: 27 euro each. Order on invoice or request a quote first.",
+                  cta: "Get my team certified"
+                }
               ].map((tier, i) => (
                 <motion.div
                   key={i}
@@ -326,13 +344,14 @@ export default function App() {
                   className={`glass-card p-10 rounded-3xl flex flex-col ${i === 0 ? 'border-klikwork-orange/50 ring-1 ring-klikwork-orange/20' : ''}`}
                 >
                   <div className="text-sm font-bold text-klikwork-orange uppercase tracking-wider mb-2">
-                    {tier.qty === "1" ? "Single License" : "Team License"}
+                    {tier.badge}
                   </div>
                   <h4 className="text-2xl font-bold mb-2">{tier.label}</h4>
                   <p className="text-brand-gray mb-8">{tier.desc}</p>
                   <div className="mb-8 mt-auto">
                     <span className="text-5xl font-bold">{tier.price}</span>
                     <span className="text-brand-gray ml-2 text-xl">euro</span>
+                    <div className="text-sm text-brand-gray mt-2">{tier.vat}</div>
                   </div>
                   <a
                     href={CHECKOUT_URL}
@@ -378,6 +397,11 @@ export default function App() {
                   key={idx}
                   className="bg-brand-card rounded-2xl p-8 border border-white/5 flex flex-col"
                 >
+                  <div className="flex gap-1 mb-4" aria-label="5 out of 5 stars">
+                    {Array.from({ length: 5 }).map((_, s) => (
+                      <Star key={s} className="w-4 h-4 fill-klikwork-orange text-klikwork-orange" />
+                    ))}
+                  </div>
                   <p className="text-brand-gray leading-relaxed mb-6 flex-grow">
                     &ldquo;{t.quote}&rdquo;
                   </p>
@@ -484,9 +508,9 @@ export default function App() {
                 question="Is the certificate recognised?" 
                 answer="The certificate demonstrates AI literacy as required under Article 4 of the EU AI Act. It is issued by Klikwork BV and includes a public verification link you can share with your employer. It is valid for one year."
               />
-              <FAQItem 
-                question="Can I buy licenses for my whole team?" 
-                answer="Yes. Purchase the tier that matches your team size. You will automatically receive a dashboard where you can invite your team members. Each person gets their own magic link, completes the training independently, and receives their own certificate on passing."
+              <FAQItem
+                question="Can I buy licenses for my whole team?"
+                answer="Yes. Teams of 10 or more get seat pricing: 37 euro per seat for 10 to 24 seats, 27 euro per seat for 25 or more, and you can order on invoice or request a quote first. You automatically receive a dashboard where you can invite your team members. Each person gets their own magic link, completes the training independently, and receives their own certificate on passing."
               />
               <FAQItem 
                 question="Can I do the training on my phone?" 
